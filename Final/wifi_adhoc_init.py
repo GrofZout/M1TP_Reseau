@@ -1,3 +1,11 @@
+# Ecrit par Xavier B. et Dwayne H.
+#Ce programme python récupère la liste des cannaux utilisés sur le reseau et
+#propose un canal qui est le moins utilisé.
+
+#Ensuite le script adhoc.sh est éxécuté.
+
+
+
 import os
 import netifaces
 import subprocess
@@ -51,7 +59,7 @@ def main():
     
     print("Canal le moins utilisé : "+ str(res))
     
-    p = subprocess.Popen(["./wifi_adhoc.sh " +str(res)], shell=True ,stdout=subprocess.PIPE)
+    p = subprocess.Popen(["./adhoc.sh"], shell=True ,stdout=subprocess.PIPE)
     p.wait()
         
 main()
